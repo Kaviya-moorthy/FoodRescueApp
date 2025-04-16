@@ -1,0 +1,80 @@
+/* Full page background */
+.page-container {
+    background-image: url("C:\Users\kaviya\Desktop\bg.jpg"); /* make sure your image is in public/images/bg.jpg */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Frame (card) - increased size */
+  .login-frame {
+    display: flex;
+    width: 1000px; /* Increased width */
+    height: 500px; /* Increased height */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  /* Left side */
+  .left-side {
+    flex: 1;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .left-side h1 {
+    margin: 0;
+    font-size: 32px; /* Bigger text */
+    white-space: nowrap; /* Keep in one line */
+  }
+  
+  .left-side p {
+    margin-top: 10px;
+  }
+  
+  /* Right side */
+  .right-side {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-side h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+  
+  .right-side input {
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .right-side button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .right-side button:hover {
+    background-color: #45a049;
+  }
+  
+  

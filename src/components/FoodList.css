@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .food-list-container {
     padding: 20px;
     background-color: #f9f9f9;
@@ -33,4 +34,41 @@
   }
   
   
+=======
+.food-list-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .food-list-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .food-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .food-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .food-card h3 {
+    margin-top: 0;
+  }
+  
+  .food-card p {
+    margin: 5px 0;
+  }
+  
+  
+>>>>>>> f9a0e835b508d29c4d07ae06a2718abeead5a8f0
   

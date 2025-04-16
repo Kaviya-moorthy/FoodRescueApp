@@ -1,49 +1,46 @@
-<<<<<<< HEAD
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
-import { FaUserCircle } from 'react-icons/fa'; // Profile icon
-import './Header.css'; // Make sure you create the Header.css for styling
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
+import './Header.css';
 
 function Header() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    setShowDropdown((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    // Perform logout logic here (e.g., clear tokens)
+    navigate('/login');
+  };
+
   return (
     <header className="header">
       <div className="header-left">Food Rescue</div>
+
       <nav className="header-center">
-        <Link to="/" className="header-link">Home</Link>
+        <Link to="/home" className="header-link">Home</Link>
         <Link to="/services" className="header-link">Services</Link>
         <Link to="/about" className="header-link">About</Link>
         <Link to="/contact" className="header-link">Contact Us</Link>
       </nav>
+
       <div className="header-right">
-        <FaUserCircle size={30} />
+        <div className="profile-wrapper" onClick={handleProfileClick}>
+          <FaUserCircle className="profile-icon" />
+          {showDropdown && (
+            <div className="profile-dropdown">
+              <Link to="/profile" className="dropdown-item">Your Profile</Link>
+              <Link to="/settings" className="dropdown-item">Settings</Link>
+              <div className="dropdown-item" onClick={handleLogout}>Logout</div>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
 }
 
 export default Header;
-=======
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
-import { FaUserCircle } from 'react-icons/fa'; // Profile icon
-import './Header.css'; // Make sure you create the Header.css for styling
-
-function Header() {
-  return (
-    <header className="header">
-      <div className="header-left">Food Rescue</div>
-      <nav className="header-center">
-        <Link to="/" className="header-link">Home</Link>
-        <Link to="/services" className="header-link">Services</Link>
-        <Link to="/about" className="header-link">About</Link>
-        <Link to="/contact" className="header-link">Contact Us</Link>
-      </nav>
-      <div className="header-right">
-        <FaUserCircle size={30} />
-      </div>
-    </header>
-  );
-}
-
-export default Header;
->>>>>>> f9a0e835b508d29c4d07ae06a2718abeead5a8f0

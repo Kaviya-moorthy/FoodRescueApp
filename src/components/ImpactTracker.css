@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .impact-tracker-container {
     padding: 30px;
     background: #f9f9f9;
@@ -37,7 +37,7 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-=======
+
 .impact-tracker-container {
     padding: 30px;
     background: #f9f9f9;
@@ -76,5 +76,5 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
->>>>>>> f9a0e835b508d29c4d07ae06a2718abeead5a8f0
+  }
   }

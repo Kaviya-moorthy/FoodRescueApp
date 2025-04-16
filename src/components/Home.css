@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -108,7 +108,7 @@
 .bottom-link:hover {
   text-decoration: underline;
 }
-=======
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -218,4 +218,4 @@
 .bottom-link:hover {
   text-decoration: underline;
 }
->>>>>>> f9a0e835b508d29c4d07ae06a2718abeead5a8f0
+

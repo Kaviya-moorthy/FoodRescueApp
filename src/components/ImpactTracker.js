@@ -11,25 +11,31 @@ function ImpactTracker() {
   const [foodWasteReduced, setFoodWasteReduced] = useState(0);
   const [chartData, setChartData] = useState([]);
 
-  const loadData = () => {
-    const storedPosts = JSON.parse(localStorage.getItem('foodPosts')) || [];
-    setFoodPosts(storedPosts);
+  // Load data from the backend
+  const loadData = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/food-posts');
+      const data = await response.json();
+      setFoodPosts(data);
 
-    const quantity = storedPosts.reduce((sum, post) => sum + parseInt(post.quantity || 0), 0);
-    setTotalQuantity(quantity);
-    setFamiliesHelped(storedPosts.length);
-    setFoodWasteReduced(quantity * 0.5);
+      const quantity = data.reduce((sum, post) => sum + parseInt(post.quantity || 0), 0);
+      setTotalQuantity(quantity);
+      setFamiliesHelped(data.length);
+      setFoodWasteReduced(quantity * 0.5);
 
-    const dataMap = {};
-    storedPosts.forEach(post => {
-      const date = new Date(post.expirationDate).toLocaleDateString();
-      if (!dataMap[date]) {
-        dataMap[date] = { date, quantity: 0 };
-      }
-      dataMap[date].quantity += parseInt(post.quantity || 0);
-    });
+      const dataMap = {};
+      data.forEach(post => {
+        const date = new Date(post.expirationDate).toLocaleDateString();
+        if (!dataMap[date]) {
+          dataMap[date] = { date, quantity: 0 };
+        }
+        dataMap[date].quantity += parseInt(post.quantity || 0);
+      });
 
-    setChartData(Object.values(dataMap));
+      setChartData(Object.values(dataMap));
+    } catch (error) {
+      console.error('Error loading food posts:', error);
+    }
   };
 
   useEffect(() => {

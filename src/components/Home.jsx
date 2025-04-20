@@ -47,7 +47,7 @@ function Home() {
 
       {/* Middle Frame - Background Image */}
       <div className="middle-frame">
-        {/* Add a background image in CSS */}
+        {/* Background image styled in CSS */}
       </div>
 
       {/* Bottom Frame - Explore More */}
@@ -56,6 +56,7 @@ function Home() {
         <div className="bottom-links">
           <Link to="/post-food-form" className="bottom-link">Post Food</Link>
           <Link to="/food-list" className="bottom-link">Food List</Link>
+          <Link to="/cart" className="bottom-link">Cart</Link> {/* <-- Cart link added here */}
           <Link to="/impact-tracker" className="bottom-link">Impact Tracker</Link>
         </div>
       </div>
